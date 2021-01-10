@@ -4,6 +4,7 @@ defmodule BenchHttp.Application do
   def start(_type, _args) do
     children = [
       elli(),
+      elli_handover(),
       cowboy(),
       plug_cowboy(),
       plug_elli()
@@ -16,6 +17,13 @@ defmodule BenchHttp.Application do
     %{
       id: BenchHttp.Elli,
       start: {:elli, :start_link, [[callback: BenchHttp.Elli, port: 4001]]}
+    }
+  end
+
+  defp elli_handover do
+    %{
+      id: BenchHttp.Elli.Handover,
+      start: {:elli, :start_link, [[callback: BenchHttp.Elli.Handover, port: 4004]]}
     }
   end
 

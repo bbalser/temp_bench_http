@@ -24,10 +24,10 @@ defmodule BenchHttp.MixProject do
     [
       {:benchee, "~> 1.0"},
       {:tesla, "~> 1.4"},
-      {:elli, "~> 3.3"},
       {:cowboy, "~> 2.8"},
       {:plug_cowboy, "~> 2.4"},
-      {:plug_elli, path: "../plug_elli"}
+      {:plug_elli, path: "../plug_elli"},
+      {:exprof, "~> 0.2.4"}
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
     ]
